@@ -1,5 +1,4 @@
-// Create Web Server
-
+// Create Web Server with Express
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -19,7 +18,6 @@ app.post('/api/comments', function(req, res) {
         // Rest of the code...
     });
 });
-
 
 
 
