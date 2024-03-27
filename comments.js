@@ -1,4 +1,5 @@
 // Create Web Server
+
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -10,10 +11,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/api/comments', function(req, res) {
-  fs.readFile(commentsPath, function(err, data) {
-    var comments = JSON.parse(data);
-    var newComment = {
-      id: Date.now(),
+    fs.readFile(commentsPath, function(err, data) {
+        var comments = JSON.parse(data);
+        var newComment = {
+            id: Date.now(),
+        };
+        // Rest of the code...
+    });
+});
 
 
 
