@@ -1,23 +1,21 @@
 // Create Web Server with Express
+// Run server with: node comments.js
+// Test with: http://localhost:3000/comments
+
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
 var fs = require('fs');
-var path = require('path');
-var commentsPath = path.join(__dirname, 'data/comments.json');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.post('/api/comments', function(req, res) {
-    fs.readFile(commentsPath, function(err, data) {
-        var comments = JSON.parse(data);
-        var newComment = {
-            id: Date.now(),
-        };
-        // Rest of the code...
-    });
+app.get('/comments', function(req, res) {
+  fs.readFile('comments.json', function(err, data) {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(data);
+  });
 });
+
+app.listen(3000);
+console.log('Server running at http://localhost:3000/comments');
+
 
 
 
