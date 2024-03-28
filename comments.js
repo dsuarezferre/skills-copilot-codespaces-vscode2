@@ -1,4 +1,4 @@
-// Create Web Server with Express
+// Create web Server
 // Run server with: node comments.js
 // Test with: http://localhost:3000/comments
 
@@ -15,7 +15,4 @@ app.get('/comments', function(req, res) {
 
 app.listen(3000);
 console.log('Server running at http://localhost:3000/comments');
-
-
-
 
